@@ -1,17 +1,27 @@
-> Why do I have a folder named ".expo" in my project?
+### First React-Native Project
 
-The ".expo" folder is created when an Expo project is started using "expo start" command.
+## Setup - Using Expo <img src="./assets/favicon.png" width=25px>
+#### Install Expo via npm.
+```bash
+npm install --global expo-cli
+```
+#### Create new project using Expo.
+```bash
+expo init project-name
+```
+Choose ***'blank'*** workflow
+#### After Creation
+```bash
+cd project-name
+```
+#### Start server using 4 of the following commands:
+```bash
+[1] npm run android
+[2] npm run ios
+[3] npm run web
+[4] npm start      // Android, iOS & Web.
+```
 
-> What does the "packager-info.json" file contain?
+## Programming in JSX.
 
-The "packager-info.json" file contains port numbers and process PIDs that are used to serve the application to the mobile device/simulator.
-
-> What does the "settings.json" file contain?
-
-The "settings.json" file contains the server configuration that is used to serve the application manifest.
-
-> Should I commit the ".expo" folder?
-
-No, you should not share the ".expo" folder. It does not contain any information that is relevant for other developers working on the project, it is specific to your machine.
-
-Upon project creation, the ".expo" folder is already added to your ".gitignore" file.
+Open folder in VSCode (using ``` code ./```) and open goto ***App.js*** to start programming.
