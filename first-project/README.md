@@ -16,10 +16,10 @@ cd project-name
 ```
 #### Start server using 4 of the following commands:
 ```bash
-[1] expo run android
-[2] expo run ios
-[3] expo run web
-[4] expo start      // Android, iOS & Web.
+[1] npm run android
+[2] npm run ios
+[3] npm run web
+[4] npm start      // Android, iOS & Web.
 ```
 
 ## Programming in JSX.
