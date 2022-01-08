@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, FlatList } from 'react-native';
 
 export default function App() {
   const [people, setPeople] = useState(
@@ -13,24 +13,20 @@ export default function App() {
     ]
   );
 
+  const renderItemFunction = ({ item }) => (
+      <Text style={styles.listItemText}>{item.name}</Text>
+    );
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.headerText}>
-          Lists in React-Native
-        </Text>
+        <Text style={styles.headerText}>FlatList in React-Native</Text>
       </View>
-      <ScrollView style={styles.scrollView}>
-        <View style={styles.listContainer}>
-          {
-            people.map( (item) => (
-                <View key={item.key}>
-                  <Text style={styles.listItem}>{item.name}</Text>
-                </View>
-            ))
-          }
-        </View>
-      </ScrollView>
+      <View style={styles.listContainer}>
+        <FlatList
+          data={people}
+          renderItem={renderItemFunction}
+        />
+      </View>
     </View>
   );
 }
@@ -44,34 +40,31 @@ const styles = StyleSheet.create({
   },
   header: {
     width: '100%',
-    backgroundColor: '#ff5555',
-    padding: 5
+
+    padding: 5,
+    backgroundColor: '#11aa66'
   },
   headerText: {
-    width: '100%',
 
-    color: 'black',
-
-    fontWeight: 'bold',
     textAlign: 'center',
-    fontSize: 25
-  },
-  scrollView: {
-    width: '100%',
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: 'white'
   },
   listContainer: {
+    width: '100%',
+  },
+  listItemText: {
+    width: '90%',
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    width: '100%',
-  },
-  listItem: {
-    width: 300,
+
+    margin: 20,
     padding: 20,
-    margin: 10,
 
     fontSize: 70,
 
-    backgroundColor: '#aaaaff'
+    backgroundColor: 'orange'
   }
 });
