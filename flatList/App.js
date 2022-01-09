@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, FlatList } from 'react-native';
+import { StyleSheet, Text, View, FlatList, TouchableOpacity } from 'react-native';
 
 export default function App() {
   const [people, setPeople] = useState(
@@ -14,7 +14,9 @@ export default function App() {
   );
 
   const renderItemFunction = ({ item }) => (
-      <Text style={styles.listItemText}>{item.name}</Text>
+      <TouchableOpacity onPress={() => console.log(item.name)}>
+        <Text style={styles.listItemText}>{item.name}</Text>
+      </TouchableOpacity>
     );
   return (
     <View style={styles.container}>
